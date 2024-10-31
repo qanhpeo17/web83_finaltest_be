@@ -4,7 +4,7 @@ import crypto from "crypto";
 const getAllTeacher = async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
-    const limit = parseInt(req.query.limit) || 10;
+    const limit = parseInt(req.query.limit) || 60;
     const skip = (page - 1) * limit;
     const teachers = await Teacher.find()
       .populate({
